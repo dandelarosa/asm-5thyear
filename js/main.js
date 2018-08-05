@@ -2,6 +2,11 @@ const GAME_WIDTH = 640;
 const GAME_HEIGHT = 480;
 const FPS = 30;
 
+/**
+ * IMPORTANT: This prefix must be unique to each game.
+ */
+const SAVE_STATE_SLOT_PREFIX = "dexternites_2_prototype_slot_";
+
 window.addEventListener("load", function(event) {
   initGameState();
   // This should only be called when you actually enter a battle, but we can put this here for now

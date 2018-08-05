@@ -46,10 +46,10 @@ function MainMenuScene() {
           nextScene = new CreditsScene();
         }
         else if (selectedOption === MAIN_MENU_OPTION_SAVE) {
-          saveGameToSlot(1);
+          saveGameToSlot(SAVE_STATE_SLOT_PREFIX + 1);
         }
         else if (selectedOption === MAIN_MENU_OPTION_LOAD) {
-          loadGameFromSlot(1);
+          loadGameFromSlot(SAVE_STATE_SLOT_PREFIX + 1);
         }
         else if (selectedOption === MAIN_MENU_OPTION_INN) {
           nextScene = new InnScene();
@@ -76,7 +76,7 @@ function MainMenuScene() {
     canvasContext.font = '48px Times';
     drawText('Dexternites', GAME_WIDTH/2, 40, 'black', 'center', 'middle');
     canvasContext.font = '30px Times';
-    drawText('The First Prototype', GAME_WIDTH/2, 80, 'black', 'center', 'middle');
+    drawText('The Prototype 2000', GAME_WIDTH/2, 80, 'black', 'center', 'middle');
 
     canvasContext.font = '20px Times';
 
