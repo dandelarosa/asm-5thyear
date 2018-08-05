@@ -99,7 +99,7 @@ function RPGBattleScene() {
       textY += 30;
     }
 
-    textX = 350;
+    textX = 320;
     textY = 20;
     for (var i = 0; i < enemies.length; i++) {
       var enemy = enemies[i];
@@ -107,7 +107,7 @@ function RPGBattleScene() {
       var enemyText = enemy.name + " Lv. " + enemy.level;
       drawText(enemyText, textX, textY, 'black', 'left', 'top');
       var HPText = 'HP: ' + enemy.currentHP + ' / ' + enemy.maxHP;
-      drawText(HPText, textX + 250, textY, 'black', 'right', 'top');
+      drawText(HPText, textX + 280, textY, 'black', 'right', 'top');
       textY += 30;
     }
 

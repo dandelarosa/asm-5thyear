@@ -1,15 +1,6 @@
 // These variables shouldn't be saved
 var enemies;
 
-function initBattleState() {
-  enemies = [
-    new BadGuy(1),
-    new BadGuy(1),
-    new BadGuy(1),
-    new BadGuy(1)
-  ];
-}
-
 function getAvailableTargets() {
   var result = [];
   for (var i = 0; i < enemies.length; i++) {

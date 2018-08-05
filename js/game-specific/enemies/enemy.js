@@ -1,12 +1,4 @@
 function Enemy(level) {
-  this.canControl = false;
-
-  // These properties should be customized per enemy
-  this.name = "Enemy";
-  this.level1HP = 100;
-  this.perLevelHP = 10;
-  this.ticksToNextTurn = 100;
-
   // These properties are calculated using the enemy's level
   this.maxHP = 0;
 
@@ -22,3 +14,13 @@ function Enemy(level) {
   // Don't heal on level up (for now)
   this.currentHP = this.maxHP;
 }
+
+Enemy.prototype.canControl = false;
+
+// These properties should be customized per enemy
+
+Enemy.prototype.name = "Badder Guy";
+
+Enemy.prototype.level1HP = 100;
+Enemy.prototype.perLevelHP = 10;
+Enemy.prototype.ticksToNextTurn = 100;
