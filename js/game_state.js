@@ -8,9 +8,9 @@ var partyMembers;
 // Needs to wait until all scripts are loaded before calling this
 function initGameState() {
   partyMembers = [
-    new David(1),
-    new Shane(1),
-    new Luke(1),
+    new David(30),
+    new Shane(30),
+    new Luke(30),
   ];
 
 }
