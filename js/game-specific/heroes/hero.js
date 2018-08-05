@@ -1,12 +1,4 @@
 function Hero(level) {
-  this.canControl = true;
-
-  // These properties should be customized per hero
-  this.name = "Hero";
-  this.level1HP = 100;
-  this.perLevelHP = 10;
-  this.ticksToNextTurn = 40;
-
   // These properties are calculated using the hero's level
   this.maxHP = 0;
 
@@ -28,7 +20,6 @@ function Hero(level) {
       name: this.name,
       level: this.level,
       currentHP: this.currentHP,
-      // Don't save ticksToNextTurn since it's tied to the hero subclass
     };
     return saveState;
   }
@@ -62,47 +53,12 @@ function heroFromSaveState(saveState) {
   return hero;
 }
 
-function David(level) {
-  Hero.call(this, level);
+Hero.prototype.canControl = true;
 
-  this.name = "David";
-  this.level1HP = 100;
-  this.perLevelHP = 10;
-  this.ticksToNextTurn = 40;
+// These properties should be customized per hero
 
-  // HACK: force recalculate stats
-  this.setLevel(level);
-  this.currentHP = this.maxHP;
-}
+Hero.prototype.name = "Hero";
 
-David.prototype = Object.create(Hero.prototype);
-David.prototype.constructor = David;
-
-function Shane(level) {
-  Hero.call(this, level);
-
-  this.name = "Shane";
-  this.level1HP = 100;
-  this.perLevelHP = 10;
-  this.ticksToNextTurn = 50;
-
-  // HACK: force recalculate stats
-  this.setLevel(level);
-  this.currentHP = this.maxHP;
-}
-
-Shane.prototype = Object.create(Hero.prototype);
-Shane.prototype.constructor = Shane;
-
-function Luke(level) {
-  Hero.call(this, level);
-
-  this.name = "Luke";
-  this.level1HP = 100;
-  this.perLevelHP = 10;
-  this.ticksToNextTurn = 60;
-
-  // HACK: force recalculate stats
-  this.setLevel(level);
-  this.currentHP = this.maxHP;
-}
+Hero.prototype.level1HP = 100;
+Hero.prototype.perLevelHP = 10;
+Hero.prototype.ticksToNextTurn = 40;
