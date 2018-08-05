@@ -34,18 +34,9 @@ function Hero(level) {
  * Call this instead of Hero.loadSaveState to ensure that the correct hero subclass gets loaded.
  */
 function heroFromSaveState(saveState) {
-  var heroClasses = {
-    "David": David,
-    "Shane": Shane,
-    "Luke": Luke,
-  }
   var heroName = saveState.name;
-  var heroClass = heroClasses[heroName];
-  if (!heroClass) {
-    return null;
-  }
   var heroLevel = saveState.level;
-  var hero = new heroClass(heroLevel);
+  var hero = new window[heroName](heroLevel);
   if (hero) {
     hero.loadSaveState(saveState);
   }
