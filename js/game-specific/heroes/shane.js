@@ -19,3 +19,9 @@ Shane.prototype.basePhysicalAttackAtLevel = function(level) {
   const valuePerLevel = 100;
   return valueAtLevel1 + valuePerLevel * (level - 1);
 }
+
+Shane.prototype.basePhysicalDefenseAtLevel = function(level) {
+  const valueAtLevel1 = 10;
+  const valuePerLevel = 75;
+  return valueAtLevel1 + valuePerLevel * (level - 1);
+}

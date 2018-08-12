@@ -20,3 +20,9 @@ David.prototype.basePhysicalAttackAtLevel = function(level) {
   const valuePerLevel = 50;
   return valueAtLevel1 + valuePerLevel * (level - 1);
 }
+
+David.prototype.basePhysicalDefenseAtLevel = function(level) {
+  const valueAtLevel1 = 10;
+  const valuePerLevel = 90;
+  return valueAtLevel1 + valuePerLevel * (level - 1);
+}

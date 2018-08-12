@@ -5,6 +5,7 @@ function Combatant(level) {
   // Transient stats
   this.currentHP = 0;
   this.currentPhysicalAttack = 0;
+  this.currentPhysicalDefense = 0;
 
   this.setLevel = function(level) {
     this.level = level;
@@ -12,6 +13,7 @@ function Combatant(level) {
 
     // Note that this calculation doesn't take equipment, status effects, etc. into account.
     this.currentPhysicalAttack = this.basePhysicalAttackAtLevel(level);
+    this.currentPhysicalDefense = this.basePhysicalDefenseAtLevel(level);
   }
   this.setLevel(level);
 
@@ -39,6 +41,11 @@ Combatant.prototype.baseHPAtLevel = function(level) {
 }
 
 Combatant.prototype.basePhysicalAttackAtLevel = function(level) {
+  // Subclasses should implement
+  return 10;
+}
+
+Combatant.prototype.basePhysicalDefenseAtLevel = function(level) {
   // Subclasses should implement
   return 10;
 }
