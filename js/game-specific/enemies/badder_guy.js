@@ -14,3 +14,9 @@ BadderGuy.prototype.baseHPAtLevel = function(level) {
   const perLevelHP = 50;
   return level1HP + perLevelHP * (level - 1);
 }
+
+BadderGuy.prototype.basePhysicalAttackAtLevel = function(level) {
+  const valueAtLevel1 = 10;
+  const valuePerLevel = 10;
+  return valueAtLevel1 + valuePerLevel * (level - 1);
+}

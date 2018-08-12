@@ -6,17 +6,17 @@ function setupBattleFormationForSelectedOption(selectedOption) {
   }
   else if (selectedOption === "Fight Formation 2") {
     enemies = [
-      new BadderGuy(2),
-      new BadderGuy(2),
-      new BadderGuy(2),
-      new BadderGuy(2)
+      new BadderGuy(32),
+      new BadderGuy(32),
+      new BadderGuy(32),
+      new BadderGuy(32)
     ];
   }
   else if (selectedOption === "Fight Formation 3") {
     enemies = [
-      new BadderGuy(10),
-      new BadderGuy(10),
-      new BadderGuy(10),
+      new BadderGuy(40),
+      new BadderGuy(40),
+      new BadderGuy(40),
     ];
   }
 }

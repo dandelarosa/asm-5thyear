@@ -14,3 +14,9 @@ David.prototype.baseHPAtLevel = function(level) {
   const perLevelHP = 90;
   return level1HP + perLevelHP * (level - 1);
 }
+
+David.prototype.basePhysicalAttackAtLevel = function(level) {
+  const valueAtLevel1 = 10;
+  const valuePerLevel = 50;
+  return valueAtLevel1 + valuePerLevel * (level - 1);
+}

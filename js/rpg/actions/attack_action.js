@@ -7,8 +7,8 @@ function AttackAction(user, target) {
 
   this.applyEffects = function() {
     // TODO: take attack, defense, and other factors into account
-    var damageDealt = 10;
-    this.target.currentHP -= damageDealt;
+    var damageDealt = this.user.currentPhysicalAttack;
+    this.target.dealDamage(damageDealt);
     // TODO: delete debugging log
     var debugText = this.user.name + " attacks " + this.target.name + " for " + damageDealt + " damage.";
     console.log(debugText);

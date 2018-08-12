@@ -14,3 +14,9 @@ Luke.prototype.baseHPAtLevel = function(level) {
   const perLevelHP = 100;
   return level1HP + perLevelHP * (level - 1);
 }
+
+Luke.prototype.basePhysicalAttackAtLevel = function(level) {
+  const valueAtLevel1 = 10;
+  const valuePerLevel = 80;
+  return valueAtLevel1 + valuePerLevel * (level - 1);
+}
