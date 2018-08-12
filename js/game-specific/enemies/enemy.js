@@ -11,6 +11,4 @@ Enemy.prototype.canControl = false;
 
 Enemy.prototype.name = "Badder Guy";
 
-Enemy.prototype.level1HP = 100;
-Enemy.prototype.perLevelHP = 10;
 Enemy.prototype.ticksToNextTurn = 100;

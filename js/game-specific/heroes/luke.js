@@ -7,6 +7,10 @@ Luke.prototype.constructor = Luke;
 
 Luke.prototype.name = "Luke";
 
-Luke.prototype.level1HP = 100;
-Luke.prototype.perLevelHP = 10;
 Luke.prototype.ticksToNextTurn = 60;
+
+Luke.prototype.baseHPAtLevel = function(level) {
+  const level1HP = 100;
+  const perLevelHP = 100;
+  return level1HP + perLevelHP * (level - 1);
+}

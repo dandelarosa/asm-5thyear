@@ -40,6 +40,4 @@ Hero.prototype.canControl = true;
 
 Hero.prototype.name = "Hero";
 
-Hero.prototype.level1HP = 100;
-Hero.prototype.perLevelHP = 10;
 Hero.prototype.ticksToNextTurn = 40;

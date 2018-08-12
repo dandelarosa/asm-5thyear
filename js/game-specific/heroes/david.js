@@ -7,6 +7,10 @@ David.prototype.constructor = David;
 
 David.prototype.name = "David";
 
-David.prototype.level1HP = 100;
-David.prototype.perLevelHP = 10;
 David.prototype.ticksToNextTurn = 40;
+
+David.prototype.baseHPAtLevel = function(level) {
+  const level1HP = 100;
+  const perLevelHP = 90;
+  return level1HP + perLevelHP * (level - 1);
+}

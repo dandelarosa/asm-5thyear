@@ -7,6 +7,10 @@ BadderGuy.prototype.constructor = BadderGuy;
 
 BadderGuy.prototype.name = "Badder Guy";
 
-BadderGuy.prototype.level1HP = 100;
-BadderGuy.prototype.perLevelHP = 10;
 BadderGuy.prototype.ticksToNextTurn = 100;
+
+BadderGuy.prototype.baseHPAtLevel = function(level) {
+  const level1HP = 100;
+  const perLevelHP = 50;
+  return level1HP + perLevelHP * (level - 1);
+}

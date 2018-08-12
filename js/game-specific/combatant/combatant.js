@@ -7,7 +7,7 @@ function Combatant(level) {
 
   this.setLevel = function(level) {
     this.level = level;
-    this.maxHP = this.level1HP + this.perLevelHP * (level - 1);
+    this.maxHP = this.baseHPAtLevel(level);
   }
   this.setLevel(level);
 
@@ -17,3 +17,9 @@ function Combatant(level) {
 
 // Below are properties to be overridden for each combatant subclass
 Combatant.prototype.canControl = false;
+
+Combatant.prototype.baseHPAtLevel = function(level) {
+  const level1HP = 100;
+  const perLevelHP = 100;
+  return level1HP + perLevelHP * (level - 1);
+}

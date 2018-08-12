@@ -1,7 +1,7 @@
 function setupBattleFormationForSelectedOption(selectedOption) {
   if (selectedOption === "Fight Formation 1") {
     enemies = [
-      new BadderGuy(1),
+      new BadderGuy(30),
     ];
   }
   else if (selectedOption === "Fight Formation 2") {
