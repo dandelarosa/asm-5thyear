@@ -1,18 +1,5 @@
 function Hero(level) {
-  // These properties are calculated using the hero's level
-  this.maxHP = 0;
-
-  // These properties should be saved in the game state
-  this.currentHP = 0;
-
-  this.setLevel = function(level) {
-    this.level = level;
-    this.maxHP = this.level1HP + this.perLevelHP * (level - 1);
-  }
-  this.setLevel(level);
-
-  // Don't heal on level up (for now)
-  this.currentHP = this.maxHP;
+  Combatant.call(this, level);
 
   this.getSaveState = function() {
     var saveState = {
@@ -29,6 +16,9 @@ function Hero(level) {
     this.currentHP = saveState.currentHP;
   }
 }
+
+Hero.prototype = Object.create(Combatant.prototype);
+Hero.prototype.constructor = Hero;
 
 /**
  * Call this instead of Hero.loadSaveState to ensure that the correct hero subclass gets loaded.

@@ -1,19 +1,9 @@
 function Enemy(level) {
-  // These properties are calculated using the enemy's level
-  this.maxHP = 0;
-
-  // Transient stats
-  this.currentHP = 0;
-
-  this.setLevel = function(level) {
-    this.level = level;
-    this.maxHP = this.level1HP + this.perLevelHP * (level - 1);
-  }
-  this.setLevel(level);
-
-  // Don't heal on level up (for now)
-  this.currentHP = this.maxHP;
+  Combatant.call(this, level);
 }
+
+Enemy.prototype = Object.create(Combatant.prototype);
+Enemy.prototype.constructor = Enemy;
 
 Enemy.prototype.canControl = false;
 
