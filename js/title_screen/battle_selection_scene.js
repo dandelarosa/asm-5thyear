@@ -1,18 +1,13 @@
-const MAIN_MENU_OPTION_FIGHT = "Fight Enemies";
-const MAIN_MENU_OPTION_INN = "Go to Inn";
-const MAIN_MENU_OPTION_SAVE = "Save Game";
-const MAIN_MENU_OPTION_LOAD = "Load Game";
-const MAIN_MENU_OPTION_INSTRUCTIONS = "Instructions";
-const MAIN_MENU_OPITON_CREDITS = "Credits";
-
-function MainMenuScene() {
+function BattleSelectionScene() {
   this.options = [
-    MAIN_MENU_OPTION_FIGHT,
-    MAIN_MENU_OPTION_INN,
-    MAIN_MENU_OPTION_SAVE,
-    MAIN_MENU_OPTION_LOAD,
-    MAIN_MENU_OPTION_INSTRUCTIONS,
-    MAIN_MENU_OPITON_CREDITS,
+    "Fight Formation 1",
+    "Fight Formation 2",
+    "Fight Formation 3",
+    "Fight Formation 4",
+    "Fight Formation 5",
+    "Fight Formation 6",
+    "Fight Formation 7",
+    "Back",
   ];
   this.selectedIndex = 0;
   this.inputDelay = 5;
@@ -38,23 +33,12 @@ function MainMenuScene() {
       }
       else if (confirmPressed()) {
         var selectedOption = this.options[this.selectedIndex];
-        if (selectedOption === MAIN_MENU_OPTION_INSTRUCTIONS) {
-          nextScene = new InstructionsScene();
+        if (selectedOption === "Back") {
+          nextScene = new MainMenuScene();
         }
-        else if (selectedOption === MAIN_MENU_OPITON_CREDITS) {
-          nextScene = new CreditsScene();
-        }
-        else if (selectedOption === MAIN_MENU_OPTION_SAVE) {
-          saveGameToSlot(SAVE_STATE_SLOT_PREFIX + 1);
-        }
-        else if (selectedOption === MAIN_MENU_OPTION_LOAD) {
-          loadGameFromSlot(SAVE_STATE_SLOT_PREFIX + 1);
-        }
-        else if (selectedOption === MAIN_MENU_OPTION_INN) {
-          nextScene = new InnScene();
-        }
-        else if (selectedOption === MAIN_MENU_OPTION_FIGHT) {
-          nextScene = new BattleSelectionScene();
+        else {
+          setupBattleFormationForSelectedOption(selectedOption);
+          nextScene = new RPGBattleScene();
         }
         didPressButton = true;
       }
