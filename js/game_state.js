@@ -11,6 +11,7 @@ function initGameState() {
     new David(30),
     new Shane(30),
     new Luke(30),
+    new Larry(30),
   ];
 
 }
