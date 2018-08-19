@@ -115,6 +115,34 @@ function RPGBattleScene() {
 
     drawText(this.turnManager.battleTimer, GAME_WIDTH/2, 450, 'black', 'center', 'top');
 
+    var heroX = 80;
+    var heroY = 160;
+    var heroStepX = -20;
+    var heroStepY = 60;
+
+    for (var i = 0; i < partyMembers.length; i++) {
+      var partyMember = partyMembers[i];
+      if (partyMember.currentHP > 0) {
+        drawRect(heroX, heroY, 64, 96, '#90ee90');
+      }
+      heroX += heroStepX;
+      heroY += heroStepY;
+    }
+
+    var enemyX = 496;
+    var enemyY = 160;
+    var enemyStepX = 20;
+    var enemyStepY = 60;
+
+    for (var i = 0; i < enemies.length; i++) {
+      var enemy = enemies[i];
+      if (enemy.currentHP > 0) {
+        drawRect(enemyX, enemyY, 64, 96, '#FA8072');
+      }
+      enemyX += enemyStepX;
+      enemyY += enemyStepY;
+    }
+
     this.currentMenu && this.currentMenu.draw();
 
     this.victoryMenu && this.victoryMenu.draw();
