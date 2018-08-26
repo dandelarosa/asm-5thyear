@@ -34,6 +34,7 @@ function heroFromSaveState(saveState) {
   return hero;
 }
 
+Hero.prototype.isEnemy = false;
 Hero.prototype.canControl = true;
 
 // These properties should be customized per hero
