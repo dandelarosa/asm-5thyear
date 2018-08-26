@@ -65,7 +65,7 @@ function LocalStorageHelper() {
   }
 
   /**
-   * Retrieves a Boolean value from localStorage.
+   * Saves a JavaScript object into localStorage.
    * @param {string} keyName A DOMString containing the name of the key you want to create/update.
    * @param {Object} keyValue A JavaScript object containing the value you want to give the key you are creating/updating.
    */
