@@ -4,6 +4,7 @@ function RPGBattleScene() {
     turnManager.addCombatantsToQueue(partyMembers);
     turnManager.addCombatantsToQueue(enemies);
     this.turnManager = turnManager;
+    this.turnManagerDisplay = new TurnManagerDisplay(turnManager);
 
     this.currentTurnCombatant = null;
     this.currentMenu = null;
@@ -54,8 +55,10 @@ function RPGBattleScene() {
         }
       }
       else {
+        this.turnManager.removeDeadCombatants();
         this.turnManager.addCombatantToQueue(this.currentTurnCombatant);
         this.currentTurnCombatant = null;
+        this.turnManager.currentCombatant = null;
       }
     }
     else if (youWonTheBattle()) {
@@ -69,9 +72,6 @@ function RPGBattleScene() {
       var currentTurnCombatant = this.turnManager.popCombatant();
       if (currentTurnCombatant) {
         this.currentTurnCombatant = currentTurnCombatant;
-        var currentTurnCombatantName = currentTurnCombatant.name;
-        this.currentDescription = currentTurnCombatantName + "'s Turn";
-
         if (currentTurnCombatant.canControl) {
           this.currentMenu = new MainBattleMenu(currentTurnCombatant);
         }
@@ -111,9 +111,7 @@ function RPGBattleScene() {
       textY += 30;
     }
 
-    drawText(this.currentDescription, GAME_WIDTH/2, 420, 'black', 'center', 'top');
-
-    drawText(this.turnManager.battleTimer, GAME_WIDTH/2, 450, 'black', 'center', 'top');
+    this.turnManagerDisplay.draw();
 
     var heroX = 80;
     var heroY = 160;

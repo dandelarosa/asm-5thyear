@@ -2,6 +2,7 @@ function TurnManager() {
   this.init = function() {
     this.battleTimer = 0;
     this.turnQueue = {};
+    this.currentCombatant = null;
   };
   this.init();
 
@@ -26,6 +27,7 @@ function TurnManager() {
   this.popCombatant = function() {
     var combatant = this.turnQueue[this.battleTimer];
     delete this.turnQueue[this.battleTimer];
+    this.currentCombatant = combatant;
     return combatant;
   }
 
@@ -45,5 +47,18 @@ function TurnManager() {
       return null;
     }
     return nextCombatant;
+  }
+
+  this.removeDeadCombatants = function() {
+    var turnTimes = Object.keys(this.turnQueue);
+
+    for (var i = 0; i < turnTimes.length; i++) {
+      var turnTime = turnTimes[i];
+      var combatantAtTime = this.turnQueue[turnTime];
+      if (combatantAtTime.currentHP <= 0) {
+        console.log("Oh no! " + combatantAtTime.name + " is dead. Removing from queue.");
+        delete this.turnQueue[turnTime];
+      }
+    }
   }
 }

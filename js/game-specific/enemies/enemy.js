@@ -5,6 +5,7 @@ function Enemy(level) {
 Enemy.prototype = Object.create(Combatant.prototype);
 Enemy.prototype.constructor = Enemy;
 
+Enemy.prototype.isEnemy = true;
 Enemy.prototype.canControl = false;
 
 // These properties should be customized per enemy
