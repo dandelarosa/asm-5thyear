@@ -50,6 +50,32 @@ function LocalStorageHelper() {
 
   this.setBoolean = this.setItem;
 
+  // Integer values
+
+  /**
+   * Retrieves an integer value from localStorage.
+   * @param {string} keyName A DOMString containing the name of the key you want to retrieve the value of.
+   */
+  this.getInt = function(keyName) {
+    var storedValue = this.getItem(keyName);
+    return parseInt(storedValue);
+  }
+
+  this.setInt = this.setItem;
+
+  // Float values
+
+  /**
+   * Retrieves a floating point number from localStorage.
+   * @param {string} keyName A DOMString containing the name of the key you want to retrieve the value of.
+   */
+  this.getFloat = function(keyName) {
+    var storedValue = this.getItem(keyName);
+    return parseFloat(storedValue);
+  }
+
+  this.setFloat = this.setItem;
+
   // Object values
 
   /**
