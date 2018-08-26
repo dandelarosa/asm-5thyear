@@ -2,6 +2,7 @@ function TurnManager() {
   this.init = function() {
     this.battleTimer = 0;
     this.turnQueue = {};
+    this.currentCombatant = null;
   };
   this.init();
 
@@ -26,6 +27,7 @@ function TurnManager() {
   this.popCombatant = function() {
     var combatant = this.turnQueue[this.battleTimer];
     delete this.turnQueue[this.battleTimer];
+    this.currentCombatant = combatant;
     return combatant;
   }
 
