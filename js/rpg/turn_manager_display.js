@@ -14,7 +14,7 @@ function TurnManagerDisplay(turnManager) {
     var combatantColor;
     // Handle case where currentCombatant is undefined
     if (!currentCombatant) {
-      combatantColor = 'gray';
+      combatantColor = 'white';
     }
     else if (currentCombatant.isEnemy) {
       combatantColor = '#FA8072';

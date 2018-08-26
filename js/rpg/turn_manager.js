@@ -48,4 +48,17 @@ function TurnManager() {
     }
     return nextCombatant;
   }
+
+  this.removeDeadCombatants = function() {
+    var turnTimes = Object.keys(this.turnQueue);
+
+    for (var i = 0; i < turnTimes.length; i++) {
+      var turnTime = turnTimes[i];
+      var combatantAtTime = this.turnQueue[turnTime];
+      if (combatantAtTime.currentHP <= 0) {
+        console.log("Oh no! " + combatantAtTime.name + " is dead. Removing from queue.");
+        delete this.turnQueue[turnTime];
+      }
+    }
+  }
 }

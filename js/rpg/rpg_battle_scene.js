@@ -55,8 +55,10 @@ function RPGBattleScene() {
         }
       }
       else {
+        this.turnManager.removeDeadCombatants();
         this.turnManager.addCombatantToQueue(this.currentTurnCombatant);
         this.currentTurnCombatant = null;
+        this.turnManager.currentCombatant = null;
       }
     }
     else if (youWonTheBattle()) {
